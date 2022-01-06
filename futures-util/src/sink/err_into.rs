@@ -5,7 +5,7 @@ use pin_project_lite::pin_project;
 
 pin_project! {
     /// Sink for the [`sink_err_into`](super::SinkExt::sink_err_into) method.
-    #[derive(Debug)]
+    #[derive(Debug, Clone)]
     #[must_use = "sinks do nothing unless polled"]
     pub struct SinkErrInto<Si: Sink<Item>, Item, E> {
         #[pin]
